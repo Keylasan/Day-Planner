@@ -1,0 +1,128 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Business Day Planner</title>
+    
+<link rel="stylesheet" href ="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel ="stylesheet" type= "text/css" href ="styles.css">
+ <script src="script.js"></script>
+
+<body onload="saveAll()">
+    <div class="header">
+        <header> <div class="dayPlanner"><h1>Today's Plan</h1></div>
+          <div id="todaysDate"></div>
+        </header>
+      </div>
+
+
+
+ <div class="container" class="row" class= "main">
+    <div class="col-md-12" class="planner">
+        <button class= "effect" onclick="save()">Save</button>
+        <div id="nine">
+          <label class="times" for="input9">9:00 AM</label>
+          <input id="input9" type="text"placeholder="Enter Task Here">
+          
+        </div>
+        
+        <div id="ten">
+          <label class="times" for="input10">10:00 AM</label>
+          <input id="input10" type="text" placeholder="Enter Task Here">
+          
+        </div>
+        
+        <div id="eleven">
+          <label class="times" for="input11">11:00 AM</label>
+          <input id="input11" type="text" placeholder="Enter Task Here">
+          
+        </div>
+        
+        <div id="twelve">
+          <label for="input12" class="times">12:00 PM</label>
+          <input id="input12"type="text"placeholder="Enter Task Here">
+       
+         
+        </div>
+        <div id="one">
+          <label for="input1" class="times">1:00 PM</label>
+          <input id="input1"type="text"placeholder="Enter Task Here">
+        
+        </div>
+        
+        <div id="two">
+          <label for="input2" class="times">2:00 PM</label>
+          <input id="input2" type="text"placeholder="Enter Task Here">
+        
+        </div>
+       
+        <div id="three">
+          <label for="input3" class="times">3:00 PM</label>
+          <input id="input3" type="text"placeholder="Enter Task Here">
+   
+        </div>
+        <div id="four">
+          <label for="input4" class="times">4:00 PM</label>
+          <input id="input4" type="text"placeholder="Enter Task Here">
+          
+        </div>
+        <div id="five">
+          <label for="input5" class="times">5:00 PM</label>
+          <input id="input5"type="text"placeholder="Enter Task Here">
+          
+        </div>
+      </div>
+   
+  </div>
+
+
+
+
+
+
+  <footer>Life Is Now</footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+        <script src='./script.js'></script>
+      
+<script>
+    
+    $("#todaysDate").text(moment().format("LLLL"));
+
+function save(){
+    localStorage.setItem("nine",$("#input9").val());
+    localStorage.setItem("ten",$("#input10").val());
+    localStorage.setItem("eleven",$("#input11").val());
+    localStorage.setItem("twelve",$("#input12").val());
+    localStorage.setItem("one",$("#input1").val());
+    localStorage.setItem("two",$("#input2").val());
+    localStorage.setItem("three",$("#input3").val());
+    localStorage.setItem("four",$("#input4").val());
+    localStorage.setItem("five",$("#input5").val());
+}
+  
+function saveAll(){
+    $("#input9").val(localStorage.getItem("nine"));
+    $("#input10").val(localStorage.getItem("ten"));
+    $("#input11").val(localStorage.getItem("eleven"));
+    $("#input12").val(localStorage.getItem("twelve"));
+    $("#input1").val(localStorage.getItem("one"));
+    $("#input2").val(localStorage.getItem("two"));
+    $("#input3").val(localStorage.getItem("three"));
+    $("#input4").val(localStorage.getItem("four"));
+    $("#input5").val(localStorage.getItem("five"));
+};
+  
+ </script>
+
+
+ </body>
+ </html>
+ 
+    
