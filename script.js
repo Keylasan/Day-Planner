@@ -23,6 +23,12 @@ $("input").each(function(index,element) {
       $(this).css("border-color","purple", "opacity", "3");
     }
    
+    //future hours are baby blue
+
+    if (time < parseInt(times)) {
+        $(this).css("border-color","#03a9f4", "opacity", "1");
+      }
+    
     //present hour is pink
   
     if (time == parseInt(times)) {

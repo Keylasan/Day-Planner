@@ -108,6 +108,10 @@ $("input").each(function(index,element) {
     $(this).css("border-color","purple", "opacity", "3");
   }
 
+  if (time < parseInt(times)) {
+    $(this).css("border-color","#03a9f4", "opacity", "1");
+  }
+
   if (time == parseInt(times)) {
     $(this).css("border-color","#f441a5", "opacity", "5");
   }
