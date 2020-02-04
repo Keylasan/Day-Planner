@@ -24,65 +24,60 @@
         <button class= "effect" onclick="save()">Save</button>
         <div id="nine">
           <label class="times" for="input9">9:00 AM</label>
-          <input id="input9" type="text"placeholder="Enter Task Here">
+          <input id="input9" time="9"  type="text"placeholder="Enter Task Here">
           
         </div>
         
         <div id="ten">
           <label class="times" for="input10">10:00 AM</label>
-          <input id="input10" type="text" placeholder="Enter Task Here">
+          <input id="input10" time="10" type="text" placeholder="Enter Task Here">
           
         </div>
         
         <div id="eleven">
           <label class="times" for="input11">11:00 AM</label>
-          <input id="input11" type="text" placeholder="Enter Task Here">
+          <input id="input11" time="11" type="text" placeholder="Enter Task Here">
           
         </div>
         
         <div id="twelve">
           <label for="input12" class="times">12:00 PM</label>
-          <input id="input12"type="text"placeholder="Enter Task Here">
+          <input id="input12" time="12" type="text"placeholder="Enter Task Here">
        
          
         </div>
         <div id="one">
           <label for="input1" class="times">1:00 PM</label>
-          <input id="input1"type="text"placeholder="Enter Task Here">
+          <input id="input1" time="13" type="text"placeholder="Enter Task Here">
         
         </div>
         
         <div id="two">
           <label for="input2" class="times">2:00 PM</label>
-          <input id="input2" type="text"placeholder="Enter Task Here">
+          <input id="input2" time="14" type="text"placeholder="Enter Task Here">
         
         </div>
        
         <div id="three">
           <label for="input3" class="times">3:00 PM</label>
-          <input id="input3" type="text"placeholder="Enter Task Here">
+          <input id="input3" time="15" type="text"placeholder="Enter Task Here">
    
         </div>
         <div id="four">
           <label for="input4" class="times">4:00 PM</label>
-          <input id="input4" type="text"placeholder="Enter Task Here">
+          <input id="input4" time="16" type="text"placeholder="Enter Task Here">
           
         </div>
         <div id="five">
           <label for="input5" class="times">5:00 PM</label>
-          <input id="input5"type="text"placeholder="Enter Task Here">
+          <input id="input5" time="17" type="text"placeholder="Enter Task Here">
           
         </div>
       </div>
    
   </div>
 
-
-
-
-
-
-  <footer>Life Is Now</footer>
+<footer>Life Is Now</footer>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -92,8 +87,33 @@
         <script src='./script.js'></script>
       
 <script>
-    
-    $("#todaysDate").text(moment().format("LLLL"));
+
+
+//aquiring current time from moment.js to display atop the page
+
+$("#todaysDate").text(moment().format("LLLL"));
+
+//Making a variable to grab the hourly time from moment.js
+
+var time = moment().format("H");
+
+//checking the time variable
+//console.log(time);
+
+$("input").each(function(index,element) {
+
+  var times = $(this).attr("time");
+ 
+  if (time > parseInt(times)) {
+    $(this).css("border-color","purple", "opacity", "3");
+  }
+
+  if (time == parseInt(times)) {
+    $(this).css("border-color","#f441a5", "opacity", "5");
+  }
+});
+
+//saving to local storage
 
 function save(){
     localStorage.setItem("nine",$("#input9").val());
@@ -106,6 +126,8 @@ function save(){
     localStorage.setItem("four",$("#input4").val());
     localStorage.setItem("five",$("#input5").val());
 }
+
+//getting what was saved after we refresh the page
   
 function saveAll(){
     $("#input9").val(localStorage.getItem("nine"));
